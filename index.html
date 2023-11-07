@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dido - White Flag</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+<! –– audio control is sticky ––>
+  <body>
+  <div class="header" id="myHeader" style="text-align:center">
+  <audio controls>
+  <source src="White Flag.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+  </audio>
+  </div>
+
+<! –– album cover ––>
+<div class="album" id="album" style="text-align:center"> 
+
+  <img src="Dido.png" alt="The heavy" width="200" height="200">
+
+
+<h2>Dido – White Flag</h2>
+
+
+
+
+</div>
+
+
+
+
+
+  
+  <div id="drag-n-drop-quiz" ></div>
+    <script>
+      let questions = [];
+      questions[0] = [
+        '',
+        {
+          id: 1,
+          text: 'I know you think that I shouldn´t still love you',
+          dragOrder: 2,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'Or tell you that',
+          dragOrder: 3,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'But if I didn´t say it, well I´d still have felt it',
+          dragOrder: 1,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+          id: 4,
+          text: 'Where´s the sense in that?',
+          dragOrder: 1,
+          dropOrder: 4, // correct order after drop
+        },
+      ];
+       questions[1] = [
+         '',
+        {
+          id: 1,
+          text: 'I promise I´m not trying',
+          dragOrder: 4,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'to make your life harder',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'Or return to where we were',
+          dragOrder: 2,
+          dropOrder: 3, // correct order after drop
+        },
+		];
+		
+	questions[2] = [
+         '',
+        {
+          id: 1,
+          text: 'But I will go down with this ship',
+          dragOrder: 4,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'And I won´t put my hands up and surrender',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'There will be no white flag above my door',
+          dragOrder: 2,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+		id: 4,
+          text: 'I´m in love and always will be',
+          dragOrder: 3,
+          dropOrder: 4, // correct order after drop
+		},
+		];
+		
+		questions[3] = [
+         '',
+        {
+          id: 1,
+          text: 'I know I left too much mess and destruction',
+          dragOrder: 4,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'To come back again',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'And I caused nothing but trouble',
+          dragOrder: 2,
+          dropOrder: 3, // correct order after drop
+        },
+        {
+          id: 4,
+          text: 'I understand if you can´t talk to me again',
+          dragOrder: 3,
+          dropOrder: 4, // correct order after drop
+        },
+		{
+          id: 5,
+          text: 'And if you live by the rules of "it´s over"',
+          dragOrder: 3,
+          dropOrder: 5, // correct order after drop
+        },
+		{
+          id: 6,
+          text: 'Then I´m sure that that makes sense',
+          dragOrder: 3,
+          dropOrder: 6, // correct order after drop
+        },
+      ];
+	  questions[4] = [
+         '',
+        {
+          id: 1,
+          text: 'But I will go down with this ship',
+          dragOrder: 3,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'And I won´t put my hands up and surrender',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'There will be no white flag above my door',
+          dragOrder: 4,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+		id: 4,
+          text: 'I´m in love and always will be',
+          dragOrder: 2,
+          dropOrder: 4, // correct order after drop
+		},
+		];
+	  questions[5] = [
+        '',
+        {
+          id: 1,
+          text: 'And when we meet',
+          dragOrder: 2,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'Which I´m sure we will',
+          dragOrder: 3,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'All that was then',
+          dragOrder: 1,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+          id: 4,
+          text: 'Will be there still',
+          dragOrder: 1,
+          dropOrder: 4, // correct order after drop
+        },
+		{
+          id: 5,
+          text: 'I´ll let it pass',
+          dragOrder: 3,
+          dropOrder: 5, // correct order after drop
+        },
+		{
+          id: 6,
+          text: 'And hold my tongue',
+          dragOrder: 3,
+          dropOrder: 6, // correct order after drop
+        },
+		{
+          id: 7,
+          text: 'And you will think',
+          dragOrder: 3,
+          dropOrder: 6, // correct order after drop
+        },
+		{
+          id: 8,
+          text: 'That I´ve moved on',
+          dragOrder: 3,
+          dropOrder: 6, // correct order after drop
+        },
+      ];
+	  questions[6] = [
+         '',
+        {
+          id: 1,
+          text: 'I will go down with this ship',
+          dragOrder: 3,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'And I won´t put my hands up and surrender',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'There will be no white flag above my door',
+          dragOrder: 4,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+		id: 4,
+          text: 'I´m in love and always will be',
+          dragOrder: 2,
+          dropOrder: 4, // correct order after drop
+		},
+		];
+	 questions[7] = [
+         '',
+        {
+          id: 1,
+          text: 'I will go down with this ship',
+          dragOrder: 4,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'And I won´t put my hands up and surrender',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'There will be no white flag above my door',
+          dragOrder: 2,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+		id: 4,
+          text: 'I´m in love and always will be',
+          dragOrder: 3,
+          dropOrder: 4, // correct order after drop
+		},
+		];
+		questions[8] = [
+         '',
+        {
+          id: 1,
+          text: 'I will go down with this ship',
+          dragOrder: 4,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'And I won´t put my hands up and surrender',
+          dragOrder: 3,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'There will be no white flag above my door',
+          dragOrder: 2,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+		id: 4,
+          text: 'I´m in love and always will be',
+          dragOrder: 1,
+          dropOrder: 4, // correct order after drop
+		},
+		];
+    </script>
+    <script src="./app.js"></script>
+  </body>
+</html>
